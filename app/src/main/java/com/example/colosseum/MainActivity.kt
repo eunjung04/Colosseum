@@ -19,7 +19,11 @@ class MainActivity : BaseActivity() {
 
     }
 
-    override fun setValue() {
+    override fun setupEvents() {
+
+        autoLoginCheckBox.setOnCheckedChangeListener { buttonView, isChecked ->
+            ContextUtil.setAutoLogin(mContext, isChecked)
+        }
 
         loginBtn.setOnClickListener {
 
@@ -68,7 +72,8 @@ class MainActivity : BaseActivity() {
 
     }
 
-    override fun setupEvents() {
+    override fun setValue() {
+        autoLoginCheckBox.isChecked=ContextUtil.isAutoLogin(mContext)
 
     }
 }
