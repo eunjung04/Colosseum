@@ -79,30 +79,22 @@ class ServerUtils {
 
             val request = Request.Builder()
                 .url(urlStr)
-                .header("X-Http-Token", ContextUtil.getUserToken(context))
+                //.header("X-Http-Token", ContextUtil.getUserToken(context))
                 .build()
 
-            client.newCall(request)
+            client.newCall(request).enqueue((object :Callback{
+                override fun onFailure(call: Call, e: IOException) {
+                    e.printStackTrace()
+                }
+                override fun onResponse(call: Call, response: Response) {
+                    val body = response.body!!.string()
+                    val json = JSONObject(body)
+                    handler?.onResponse(json)
 
-        }
+            }
 
-        fun getRequestPostList(context: Context, handler: JsonResponseHandler?) {
+        })
 
-            val client = OkHttpClient()
-            val urlBuilder = "${BASE_URL}/black_list".toHttpUrlOrNull()!!.newBuilder()
-           // urlBuilder.addEncodedQueryParameter("device_token", "임시기기토큰")
-            //urlBuilder.addEncodedQueryParameter("os", "Android")
-
-            val urlStr = urlBuilder.build().toString()
-
-            //  Log.d("완성된 주소", urlStr)
-
-            val request = Request.Builder()
-                .url(urlStr)
-                .header("X-Http-Token", ContextUtil.getUserToken(context))
-                .build()
-
-            client.newCall(request)
 
         }
     }

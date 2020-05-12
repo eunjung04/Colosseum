@@ -14,6 +14,7 @@
        android:text="아이디"/>
 
     <EditText
+        android:id="@+id/emailEdt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
@@ -25,6 +26,7 @@
         android:text="아이디"/>
 
     <EditText
+        android:id="@+id/pwEdt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
@@ -32,11 +34,13 @@
 
 
     <Button
+        android:id="@+id/loginBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/login"/>
 
     <Button
+        android:id="@+id/signUpBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/sign_up"/>
