@@ -2,9 +2,12 @@ package com.example.colosseum
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
+import com.example.colosseum.utils.ContextUtil
 import com.example.colosseum.utils.ServerUtils
 import kotlinx.android.synthetic.main.activity_main.*
+import org.json.JSONObject
 
 class MainActivity : BaseActivity() {
 
@@ -23,12 +26,26 @@ class MainActivity : BaseActivity() {
             val email=emailEdt.text.toString()
             val pw=pwEdt.text.toString()
 
-            ServerUtils.postRequestLogin(mContext, email, pw, object : ServerUtils.JsonResponseHandler)
+            ServerUtils.postRequestLogin(mContext, email, pw, object : ServerUtils.JsonResponseHandler{
+                override fun onResponse(json: JSONObject) {
+                    Log.d("로그인 응답",json.toString())
+                    val code=json.getInt("code")
+                }
+            })
 
 
-            val code=json.getInt("code")
+
 
             if(code==200){
+
+                val data=json.getJSONObject("data")
+                val token=data.getString("token")
+
+                ContextUtil.setUserToken(mContext, tokrn)
+
+
+
+
 
 
 
