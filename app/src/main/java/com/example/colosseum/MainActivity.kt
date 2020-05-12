@@ -30,8 +30,7 @@ class MainActivity : BaseActivity() {
                 override fun onResponse(json: JSONObject) {
                     Log.d("로그인 응답",json.toString())
                     val code=json.getInt("code")
-                }
-            })
+
 
 
 
@@ -41,7 +40,12 @@ class MainActivity : BaseActivity() {
                 val data=json.getJSONObject("data")
                 val token=data.getString("token")
 
-                ContextUtil.setUserToken(mContext, tokrn)
+                ContextUtil.setUserToken(mContext, token)
+
+
+                runOnUiThread {
+                    Toast.makeText(mContext, resources.getString(R.string.login_success_message),Toast.LENGTH_SHORT).show()
+                }
 
 
 
@@ -50,14 +54,15 @@ class MainActivity : BaseActivity() {
 
 
             }else{
-                val message=json.getstring("message")
+                val message=json.getString("message")
 
                 runOnUiThread{
                     Toast.makeText(mContext,message, Toast.LENGTH_SHORT).show()
                 }
 
             }
-
+        }
+    })
 
         }
 
