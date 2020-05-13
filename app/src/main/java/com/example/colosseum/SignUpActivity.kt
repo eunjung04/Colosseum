@@ -1,10 +1,14 @@
 package com.example.colosseum
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import com.example.colosseum.utils.ServerUtils
 import kotlinx.android.synthetic.main.activity_sign_up.*
 
 class SignUpActivity : BaseActivity() {
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -14,6 +18,15 @@ class SignUpActivity : BaseActivity() {
 }
 
     override fun setupEvents() {
+
+        emailEdt.addTextChangedListener(object : TextWatcher{
+            override fun afterTextChanged(s: Editable?) {
+                isEmailChecked=false
+
+                emailChecked.setText(R.string.id_check_message)
+                emailChecked.setTextColor(resources.getColor())
+            }
+        })
 
         emailChecked.setOnClickListener {
             val inputEmail=emailEdt.text.toString()
