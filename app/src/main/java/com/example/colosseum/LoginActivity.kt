@@ -22,6 +22,8 @@ class LoginActivity(override val LoginActivity: Unit) : BaseActivity() {
 
     override fun setupEvents() {
 
+
+
         autoLoginCheckBox.setOnCheckedChangeListener { buttonView, isChecked ->
             ContextUtil.setAutoLogin(mContext, isChecked)
         }

@@ -2,11 +2,11 @@ package com.example.colosseum
 
 import android.os.Bundle
 
-class SiginUpActivity : BaseActivity() {
+class SignUpActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_sign_up)
         setupEvents()
         setValues()
 }
