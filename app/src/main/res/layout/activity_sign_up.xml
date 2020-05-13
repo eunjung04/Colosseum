@@ -10,6 +10,8 @@
     android:paddingTop="57dp"
     tools:context=".SignUpActivity">
 
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,7 +22,9 @@
             android:layout_width="5dp"
             android:layout_height="5dp"
             android:src="@drawable/rectangle"/>
+
         <TextView
+            android:id="@+id/emailEdt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="17sp"
@@ -34,6 +38,7 @@
             android:layout_weight="1"/>
 
         <TextView
+            android:id="@+id/emailChecked"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="13sp"
@@ -45,7 +50,8 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
 
 
         <EditText
@@ -53,16 +59,18 @@
             android:layout_height="43dp"
             android:padding="10dp"
             android:hint="이메일 입력"
-            android:background="@drawable/gray_border_box"/>
+            android:background="@drawable/gray_border_box"
+            android:layout_marginTop="8dp"/>
 
         <Button
+            android:id="@+id/emailCheckBtn"
             android:layout_marginRight="7dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/check_duplicated_id"
             android:textColor="@color/darkGray"
-            android:layout_gravity="right"
-            android:background="@drawable/gray_border_box"/>
+            android:layout_gravity="right|center_vertical"
+            android:background="@drawable/gray_border_box_pressed"/>
     </FrameLayout>
 
 
