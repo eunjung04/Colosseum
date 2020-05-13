@@ -6,14 +6,15 @@ import android.util.Log
 import android.widget.Toast
 import com.example.colosseum.utils.ContextUtil
 import com.example.colosseum.utils.ServerUtils
+import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_main.*
 import org.json.JSONObject
 
-class MainActivity : BaseActivity() {
+class LoginActivity(override val LoginActivity: Unit) : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_login)
         setupEvents()
         setValue()
 
