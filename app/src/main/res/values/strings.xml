@@ -13,5 +13,6 @@
     <string name="id_check_message">중복확인을 해주세요.</string>
     <string name="id_check_success_message">사용가능한 이메일입니다.</string>
     <string name="id_check_fail_message">중복된 이메일입니다.</string>
+    <string name="change_profile_img">프사 변경</string>
 
 </resources>

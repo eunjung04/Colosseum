@@ -24,7 +24,7 @@
             android:src="@drawable/rectangle"/>
 
         <TextView
-            android:id="@+id/emailEdt"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="17sp"
@@ -38,7 +38,7 @@
             android:layout_weight="1"/>
 
         <TextView
-            android:id="@+id/emailChecked"
+            android:id="@+id/emailCheckResultTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="13sp"
@@ -55,6 +55,7 @@
 
 
         <EditText
+            android:id="@+id/emailEdt"
             android:layout_width="match_parent"
             android:layout_height="43dp"
             android:padding="10dp"
