@@ -67,12 +67,12 @@ class ServerUtils {
         }
 
 
-        fun getRequestEmailDupleCheck(context: Context, handler: JsonResponseHandler?) {
+        fun getRequestMainInfo(context: Context, handler: JsonResponseHandler?) {
 
             val client = OkHttpClient()
-            val urlBuilder = "${BASE_URL}/my_info".toHttpUrlOrNull()!!.newBuilder()
-            urlBuilder.addEncodedQueryParameter("type", "EMAIL")
-            urlBuilder.addEncodedQueryParameter("value", "email")
+            val urlBuilder = "${BASE_URL}/main_info".toHttpUrlOrNull()!!.newBuilder()
+           // urlBuilder.addEncodedQueryParameter("type", "EMAIL")
+           // urlBuilder.addEncodedQueryParameter("value", "email")
 
             val urlStr = urlBuilder.build().toString()
 
@@ -80,7 +80,7 @@ class ServerUtils {
 
             val request = Request.Builder()
                 .url(urlStr)
-                //.header("X-Http-Token", ContextUtil.getUserToken(context))
+                .header("X-Http-Token", ContextUtil.getUserToken(context))
                 .build()
 
             client.newCall(request).enqueue(object :Callback {

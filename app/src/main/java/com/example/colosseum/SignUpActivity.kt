@@ -41,7 +41,7 @@ class SignUpActivity : BaseActivity() {
         emailCheckBtn.setOnClickListener {
             val inputEmail=emailEdt.text.toString()
 
-            ServerUtils.getRequestEmailDupleCheck(mContext, inputEmail, object:ServerUtils.JsonResponseHandler{
+            ServerUtils.getRequestMainInfo(mContext, inputEmail, object:ServerUtils.JsonResponseHandler{
                 override fun onResponse(json: JSONObject) {
                     Log.d("이메일중복응답", json.toString())
 

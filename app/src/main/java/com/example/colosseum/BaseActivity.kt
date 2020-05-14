@@ -4,11 +4,10 @@ import androidx.appcompat.app.AppCompatActivity
 
 abstract class BaseActivity : AppCompatActivity() {
 
-    abstract val LoginActivity: Unit
-    val mContext = this
+    abstract val REQ_FOR_PICK_IMAGE_FROM_GALLERY: Int
+    val mContext=this
 
     abstract fun setupEvents()
-    abstract fun setValue()
     abstract fun setValues()
 
 
